@@ -2,7 +2,6 @@ plugins {
     id 'java'
     id 'eclipse-wtp' 
     id 'war' 
-//    id 'com.bmuschko.tomcat' version '2.4.2'
 }
 
 webAppDirName = 'WebContent'
@@ -29,28 +28,15 @@ eclipse {
 
 dependencies {
     providedCompile 'javax.servlet:javax.servlet-api:3.1.0'
-    
-//	def tomcatVersion = '8.5.2'
-//   tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",
-//           "org.apache.tomcat.embed:tomcat-embed-logging-juli:${tomcatVersion}",
-//          "org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}"
-// https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-jsp-api
+	// https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-jsp-api
 	compile group: 'org.apache.tomcat', name: 'tomcat-jsp-api', version: '8.5.27'
-// https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-el-api
+	// https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-el-api
 	compile group: 'org.apache.tomcat', name: 'tomcat-el-api', version: '8.5.27'
-// https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-jasper-el
+	// https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-jasper-el
 	compile group: 'org.apache.tomcat', name: 'tomcat-jasper-el', version: '8.5.27'
+	// https://mvnrepository.com/artifact/javax.servlet/jstl
+	compile group: 'javax.servlet', name: 'jstl', version: '1.2'
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
-    // https://mvnrepository.com/artifact/org.mockito/mockito-core
-//	testCompile group: 'org.mockito', name: 'mockito-core', version: '2.13.0'
-	// https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager
-//	testCompile group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '2.1.0'
- 	// https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
-//	testCompile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.9.0'
 }
-
-// context where tomcat is deployed, by defautl localhost:8080/
-//tomcatRun.contextPath = '/'
-//tomcatRunWar.contextPath = '/'

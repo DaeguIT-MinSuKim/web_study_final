@@ -34,6 +34,12 @@ dependencies {
 //   tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",
 //           "org.apache.tomcat.embed:tomcat-embed-logging-juli:${tomcatVersion}",
 //          "org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}"
+// https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-jsp-api
+	compile group: 'org.apache.tomcat', name: 'tomcat-jsp-api', version: '8.5.27'
+// https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-el-api
+	compile group: 'org.apache.tomcat', name: 'tomcat-el-api', version: '8.5.27'
+// https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-jasper-el
+	compile group: 'org.apache.tomcat', name: 'tomcat-jasper-el', version: '8.5.27'
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'

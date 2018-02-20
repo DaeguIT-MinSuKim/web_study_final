@@ -9,9 +9,20 @@
 		<servlet-name>now</servlet-name>
 		<servlet-class>kr.or.dgit.web_study_final.servlet.NowServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>SimpleController</display-name>
+		<servlet-name>SimpleController</servlet-name>
+		<servlet-class>kr.or.dgit.web_study_final.mvc.SimpleController</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>now</servlet-name>
 		<url-pattern>/now</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>SimpleController</servlet-name>
+		<url-pattern>/simple</url-pattern>
 	</servlet-mapping>
 	
 	<welcome-file-list>

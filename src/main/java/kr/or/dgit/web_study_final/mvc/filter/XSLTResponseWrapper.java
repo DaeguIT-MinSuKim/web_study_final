@@ -1,0 +1,28 @@
+package kr.or.dgit.web_study_final.mvc.filter;
+
+import java.io.PrintWriter;
+
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpServletResponseWrapper;
+
+public class XSLTResponseWrapper extends HttpServletResponseWrapper {
+
+	private ResponseBufferWriter buffer = null;
+
+	public XSLTResponseWrapper(HttpServletResponse response) {
+		super(response);
+		buffer = new ResponseBufferWriter();
+	}
+
+	@Override
+	public PrintWriter getWriter() throws java.io.IOException {
+		return buffer;
+	}
+
+	@Override
+	public void setContentType(String contentType) {}
+
+	public String getBufferedString() {
+		return buffer.toString();
+	}
+}

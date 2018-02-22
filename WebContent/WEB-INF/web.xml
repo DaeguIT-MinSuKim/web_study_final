@@ -4,22 +4,46 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
 	id="WebApp_ID" version="3.1">
 	<display-name>web_study_final</display-name>
+	
 	<filter>
-		<description>
-		</description>
-		<display-name>NullParameter</display-name>
 		<filter-name>NullParameter</filter-name>
 		<filter-class>kr.or.dgit.web_study_final.mvc.filter.NullParameterFilter</filter-class>
 		<init-param>
-			<description>
-			</description>
 			<param-name>parameterNames</param-name>
 			<param-value>id, name</param-value>
 		</init-param>
 	</filter>
+	
+	<filter>
+		<filter-name>LoginCheck</filter-name>
+		<filter-class>kr.or.dgit.web_study_final.mvc.filter.LoginCheckFilter</filter-class>
+	</filter>
+	<filter>
+		<description>
+		</description>
+		<display-name>encodingFilter</display-name>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>kr.or.dgit.web_study_final.mvc.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<description>
+			</description>
+			<param-name>encoding</param-name>
+			<param-value>utf-8</param-value>
+		</init-param>
+	</filter>
+	
 	<filter-mapping>
 		<filter-name>NullParameter</filter-name>
 		<url-pattern>*.jsp</url-pattern>
+	</filter-mapping>
+	
+	<filter-mapping>
+		<filter-name>LoginCheck</filter-name>
+		<url-pattern>/board/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 	
 	<servlet>
